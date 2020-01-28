@@ -10,6 +10,8 @@ class LoginPage extends React.Component {
     };
 
     handleChange = e => {
+        console.log(e)
+
         this.setState({
             credentials: {
                 ...this.state.credentials,
@@ -19,17 +21,16 @@ class LoginPage extends React.Component {
     };
 
     login = e => {
-        // console.log(e)
         e.preventDefault();
         axios
-        .post('http://localhost:5000/login', this.state.credentials)
+        .post('http://localhost:5000/api/login', this.state.credentials)
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.payload);
-            this.props.history.push('/friends')
+            this.props.history.push('/protected')
         })
         .catch(err => {
-            console.log(err)
+            console.log('err', err)
         });
     };
 
