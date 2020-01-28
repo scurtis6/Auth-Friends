@@ -14,6 +14,7 @@ function App() {
         </ul>
         <Switch>
           <Route path='/login' component={LoginPage} />
+          <Route component={LoginPage} />
         </Switch>
       </div>
     </Router>
