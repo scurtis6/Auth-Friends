@@ -4,21 +4,20 @@ import './App.css';
 import LoginPage from './components/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import FriendsList from './components/FriendsList';
+import FriendsForm from './components/FriendsForm';
 
 function App() {
   return (
     <Router>
       <div className='App'>
-        <ul>
-          <li>
+        <div>
             <Link to='/login'>Login</Link>
-          </li>
-          <li>
-            <Link to="/protected">My Friends Page</Link>
-          </li>
-        </ul>
+            <Link to='/friends'>My Friends Page</Link>
+            <Link to='/addFriend'>Add a Friend</Link>
+        </div>
         <Switch>
-          <PrivateRoute path='/protected' component={FriendsList} />
+          <PrivateRoute path='/friends' component={FriendsList} />
+          <PrivateRoute path='/addFriend' component={FriendsForm} />
           <Route path='/login' component={LoginPage} />
           <Route component={LoginPage} />
         </Switch>

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import FriendsList from './FriendsList';
 
 class FriendsForm extends React.Component {
     constructor() {
@@ -32,7 +33,6 @@ class FriendsForm extends React.Component {
             console.log(err);
         });
     }
-    
 
     render() {
         return (
@@ -62,6 +62,7 @@ class FriendsForm extends React.Component {
                     />
                     <button type='submit'>Add</button>
                 </form>
+                <FriendsList key={this.state.newFriend.id} id={this.state.newFriend.id} />
             </div>
         )
     }

@@ -27,7 +27,7 @@ class LoginPage extends React.Component {
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.payload);
-            this.props.history.push('/protected');
+            this.props.history.push('/friends');
         })
         .catch(err => {
             console.log('err', err)
@@ -37,6 +37,7 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div>
+                <h3>Please Login</h3>
                 <form onSubmit={this.login}>
                     <input 
                     type='text'
