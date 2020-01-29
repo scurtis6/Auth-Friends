@@ -27,7 +27,7 @@ class LoginPage extends React.Component {
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.payload);
-            this.props.history.push('/protected')
+            this.props.history.push('/protected');
         })
         .catch(err => {
             console.log('err', err)
@@ -52,7 +52,7 @@ class LoginPage extends React.Component {
                     value={this.state.credentials.password}
                     onChange={this.handleChange}
                     />
-                    <button>Log in</button>
+                    <button type='submit'>Log in</button>
                 </form>
             </div>
         );

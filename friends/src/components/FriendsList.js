@@ -1,6 +1,8 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import FriendsForm from './FriendsForm';
+import Friends from './Friends';
 
 class FriendsList extends React.Component {
     state = {
@@ -24,14 +26,34 @@ class FriendsList extends React.Component {
         .catch(err => console.log('error', err))
     }
 
+    // addFriend = () => {
+    //     axiosWithAuth()
+    //         .post('http://localhost:5000/api/friends', this.state.friends, {
+    //             headers: {Authorization: localStorage.getItem("token")}
+    // })
+    //         .then(res => {
+    //             this.getData();
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
+
     render() {
-        return (this.state.friends.map(friend => (
+        return (
             <div>
-                <h2>Name: {friend.name}</h2>
-                <p>Age: {friend.age}</p>
-                <p>Email: {friend.email}</p>
+                <div>
+                    <FriendsForm />
+                    </div>
+                    {this.state.friends.map(friend => (
+                    <div>
+                        <h3>Name: {friend.name}</h3>
+                        <p>Age: {friend.age}</p>
+                        <p>Email: {friend.email}</p>
+                    </div>
+                ))}  
             </div>
-        )))
+        )
     }
 }
 
