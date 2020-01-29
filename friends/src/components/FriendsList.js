@@ -48,35 +48,48 @@ class FriendsList extends React.Component {
             })
       })
     }
-    // addFriend = () => {
+ 
+    // editFriend = (id) => {
     //     axiosWithAuth()
-    //         .post('http://localhost:5000/api/friends', this.state.friends, {
-    //             headers: {Authorization: localStorage.getItem("token")}
-    // })
-    //         .then(res => {
-    //             this.getData();
+    //     .put(`/friends/${id}`, this.state.friends, {
+    //         headers: {Authorization: localStorage.getItem("token")}})
+    //     .then(res => {
+    //         console.log(res)
+    //         this.setState({
+    //             friends: res.data
     //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         });
+    //   })
     // }
+
+    editFriend = (id) => {
+        axiosWithAuth()
+        .delete(`/friends/${id}`)
+        .then(res => {
+            console.log(res)
+            this.setState({
+                friends: res.data.id
+            })
+      })
+    }
 
     render() {
         return (
-            <div>
-                <div>
-                    {/* <FriendsForm /> */}
-                    <h2>My Friends</h2>
-                    </div>
+            <div className='friend-title'>
+                {/* <FriendsForm /> */}
+                <h2>My Friends</h2>
+                <div className='friends-content'>
                     {this.state.friends.map(friend => (
-                    <div>
+                    <div className="friends-list">
                         <h3>Name: {friend.name}</h3>
                         <p>Age: {friend.age}</p>
                         <p>Email: {friend.email}</p>
                         <button onClick={() => {this.deleteFriend(friend.id)} }>{`Delete ${friend.name}`}</button>
+                        {/* <button onClick={() => {this.editFriend(friend.id)}}>Edit</button> */}
                     </div>
                 ))}
             </div>
+            </div>
+
         )
     }
 }

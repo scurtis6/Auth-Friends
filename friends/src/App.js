@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import LoginPage from './components/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import FriendsList from './components/FriendsList';
@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <div>
+        <div className='links'>
             <Link to='/login'>Login</Link>
             <Link to='/friends'>My Friends Page</Link>
             <Link to='/addFriend'>Add a Friend</Link>

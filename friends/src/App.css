@@ -1,38 +1,125 @@
 .App {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .links {
+  margin-top: 5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .links a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  color: orangered;
+  background-color: lightgrey;
+  padding: 2% 3%;
+  border-bottom: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App .links a:hover {
+  background-color: orangered;
+  color: lightgray;
+}
+
+.App .login h3 {
+  margin-top: 4%;
+  color: #aa5738;
+}
+
+.App .login form input {
+  margin: 1%;
+}
+
+.App .login form button {
+  background-color: #aa5738;
   color: white;
+  padding: 1% 2%;
 }
 
-.App-link {
-  color: #61dafb;
+.App .login form button:hover {
+  color: #aa5738;
+  background-color: lightgray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .friends-form h2 {
+  color: #610000;
+  margin-top: 5%;
 }
+
+.App .friends-form form input {
+  padding: 1.5% 3%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.App .friends-form form button {
+  color: lightgray;
+  background-color: #610000;
+  padding: 1.5% 3%;
+}
+
+.App .friends-form form button:hover {
+  background-color: lightgray;
+  color: #610000;
+}
+
+.App .friends-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .friend-title {
+  margin-top: 5%;
+}
+
+.App .friend-title h2 {
+  color: red;
+}
+
+.App .friends-list:nth-of-type(odd) {
+  color: orange;
+  border: 1px solid black;
+  margin: 2%;
+  padding: 0% 3% 3%;
+  background-color: #fdefef;
+}
+
+.App .friends-list:nth-of-type(odd) button {
+  color: #fdefef;
+  background-color: red;
+  padding: 4% 5%;
+}
+
+.App .friends-list:nth-of-type(odd) button:hover {
+  color: red;
+  background-color: #fdefef;
+  border: 2px solid black;
+}
+
+.App .friends-list:nth-of-type(even) {
+  color: white;
+  border: 1px solid black;
+  margin: 2%;
+  padding: 0% 3% 3%;
+  background-color: orangered;
+}
+
+.App .friends-list:nth-of-type(even) button {
+  color: white;
+  background-color: orange;
+  padding: 4% 5%;
+}
+
+.App .friends-list:nth-of-type(even) button:hover {
+  color: orange;
+  background-color: #fdefef;
+  border: 2px solid darkgray;
+}
+/*# sourceMappingURL=App.css.map */

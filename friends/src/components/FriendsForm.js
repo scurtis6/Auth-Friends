@@ -36,7 +36,7 @@ class FriendsForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='friends-form'>
                 <h2>Add a Friend</h2>
                 <form onSubmit={this.addFriend}>
                     <input 
